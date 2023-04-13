@@ -1,28 +1,40 @@
 {
+"version": "2",
+"templates":
+[
+  {
     "type": 1,
-    "title": "preinstallpfc",
-    "logo": "https://github.com/Helmut-Saal/docker-templates/blob/main/icons/wagoOpenSource.png?raw=true",
-    "description": "Preinstall PFC with IP",
-    "image": "script/con:1.0.1",
+    "title": "provision pfc",
+    "logo": "https://github.com/Helmut-Saal/docker-templates/blob/main/icons/swarm.png?raw=true",
+    "description": "Add PFC to a swarm cluster and a local docker repository",
+    "image": "wagoautomation/provision-pfc-arm32v7:1.0.0",
+    "name": "provision-pfc",
     "restart_policy": "no",
-    "name": "preinstall",
-    "command": "/home/mein.sh",
+    "command": "/home/provision-pfc.sh",
     "platform": "linux",
-    "env": [
+    "volumes": [
       {
-        "name": "PFC_IP",
-        "label": "IP Address of the PFC",
+        "bind": "/tmp",
+        "container": "/tmp"
+      }
+    ],
+	"env": [
+      {
+        "name": "WORKER_IP",
+        "label": "IP Adress of new worker node.",
         "default": "192.168.10.30"    
       },
 	  {
-        "name": "PFC_PASSWORD",
-        "label": "New Pfc Password",
+        "name": "MANAGER_IP",
+        "label": "IP Adress of the manager node.",
         "default": "192.168.10.100"    
       },
 	  {
-        "name": "PFC_HOSTNAME",
-        "label": "New Hostname",
-        "default": "PFC_XX"    
+        "name": "CA_PATH",
+        "label": "Folder of the ca file.",
+        "default": "/home/provisionPLC/"    
       }
-  ]
+    ]
+  }
+]
 }
