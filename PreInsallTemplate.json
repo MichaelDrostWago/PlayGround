@@ -1,40 +1,16 @@
-{
-"version": "2",
-"templates":
+version: '3'
 
-  {
-    "type": 1,
-    "title": "preinstallpfc",
-    "logo": "https://github.com/Helmut-Saal/docker-templates/blob/main/icons/swarm.png?raw=true",
-    "description": " Preinstall PFC with IP",
-    "image": "script/con:1.0.1",
-    "name": "preinstall",
-    "restart_policy": "no",
-    "command": "/home/mein.sh",
-    "platform": "linux",
-    "volumes": [
-      {
-        "bind": "/tmp",
-        "container": "/tmp"
-      }
-    ],
-	"env": [
-      {
-        "name": "PFC_IP",
-        "label": "IP Address of the PFC",
-        "default": "192.168.10.30"    
-      },
-	  {
-        "name": "PFC_PASSWORD",
-        "label": "New Pfc Password",
-        "default": "192.168.10.100"    
-      },
-	  {
-        "name": "PFC_HOSTNAME",
-        "label": "New Hostname",
-        "default": "PFC_XX"    
-      }
-    ]
-  }
+services:
 
-}
+  skript:
+    image: script/con:1.0.0
+    container_name: "Provision"
+    deploy:
+      replicas: 1
+    restart: no
+    command: "/home/mein.sh"
+    environment:
+      - PFC_IP=192.168.2.122
+      - PFC_PASSWORD=wago
+      - PFC_HOSTNAME=PFC1
+
