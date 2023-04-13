@@ -21,8 +21,8 @@
 	"env": [
       {
         "name": "PFC_IP",
-        "label": "IP Adress of new worker node.",
-        "default": "192.168.10.30"    
+        "label": "IP Adress of pfc.",
+        "default": "192.168.2.30"    
       },
 	  {
         "name": "PFC_PASSWORD",
