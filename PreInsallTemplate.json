@@ -6,7 +6,7 @@
     "image": "script/con:1.0.1",
     "restart_policy": "no",
     "name": "preinstall",
-    "command": "/home/mein.sh";
+    "command": "/home/mein.sh",
     "platform": "linux",
     "env": [
       {
