@@ -4,13 +4,13 @@
 [
   {
     "type": 1,
-    "title": "provision pfc",
+    "title": "preinstall pfc",
     "logo": "https://github.com/Helmut-Saal/docker-templates/blob/main/icons/swarm.png?raw=true",
-    "description": "Add PFC to a swarm cluster and a local docker repository",
-    "image": "wagoautomation/provision-pfc-arm32v7:1.0.0",
-    "name": "provision-pfc",
+    "description": "preset pfc",
+    "image": "script/con:1.0.1",
+    "name": "preinstall-pfc",
     "restart_policy": "no",
-    "command": "/home/provision-pfc.sh",
+    "command": "/home/mein.sh",
     "platform": "linux",
     "volumes": [
       {
