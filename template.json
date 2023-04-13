@@ -20,19 +20,19 @@
     ],
 	"env": [
       {
-        "name": "WORKER_IP",
+        "name": "PFC_IP",
         "label": "IP Adress of new worker node.",
         "default": "192.168.10.30"    
       },
 	  {
-        "name": "MANAGER_IP",
-        "label": "IP Adress of the manager node.",
-        "default": "192.168.10.100"    
+        "name": "PFC_PASSWORD",
+        "label": "new pfc password.",
+        "default": "wago"    
       },
 	  {
-        "name": "CA_PATH",
-        "label": "Folder of the ca file.",
-        "default": "/home/provisionPLC/"    
+        "name": "PFC_HOSTNAME",
+        "label": "new pfc hostname",
+        "default": "PFC_XX"    
       }
     ]
   }
